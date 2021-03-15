@@ -9,6 +9,16 @@ export const todos = (state = [], action) => {
         }
         return todo
       })
+    case 'SHOW_ALL':
+      return state
+    case 'SHOW_ACTIVE':
+      return state.filter(todo => {
+        return !todo.completed
+      })
+    case 'SHOW_COMPLETED':
+      return state.filter(todo => {
+        return todo.completed
+      })
     default:
       return state;
   }
