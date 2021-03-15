@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ToDoCard from '../components/ToDoCard'
+import { showAll, showActive, showCompleted} from '../actions/index'
 
 const ToDoList = ({todos, showAll, showActive, showCompleted}) => {
   const todoDisplay = todos.map(todo => {
@@ -30,4 +31,10 @@ const mapStateToProps = state => ({
   todos: state.todos
 });
 
-export default connect(mapStateToProps)(ToDoList);
+const mapDispatchToProps = dispatch => ({
+  showAll: () => dispatch( showAll() ),
+  showActive: () => dispatch( showActive() ),
+  showCompleted: () => dispatch( showCompleted() )
+})
+  
+export default connect(mapStateToProps, mapDispatchToProps)(ToDoList);
