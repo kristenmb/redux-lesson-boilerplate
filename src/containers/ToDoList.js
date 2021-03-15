@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ToDoCard from '../components/ToDoCard'
 
-const ToDoList = ({todos}) => {
+const ToDoList = ({todos, showAll, showActive, showCompleted}) => {
   const todoDisplay = todos.map(todo => {
     return (
       <ToDoCard
@@ -15,9 +15,14 @@ const ToDoList = ({todos}) => {
   })
 
   return (
-    <ul>
-      {todoDisplay}
-    </ul>
+     <section>
+      <button onClick={() => showAll()}>All</button>
+      <button onClick={() => showActive()}>Active</button>
+      <button onClick={() => showCompleted()}>Done</button>
+      <ul>
+        {todoDisplay}
+      </ul>
+    </section>
   )
 }
 
