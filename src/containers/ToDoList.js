@@ -1,17 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import ToDoCard from '../components/ToDoCard'
 
 const ToDoList = ({todos}) => {
-  console.log(todos);
-  const todoDisplay = todos.map((todo, i) => {
+  const todoDisplay = todos.map(todo => {
     return (
-      <li
-        key={i}
-        checked={todo.completed}>
-      {todo.text}
-      </li>
+      <ToDoCard
+        key={todo.id}
+        id={todo.id}
+        todo={todo.text}
+        completed={todo.completed}
+      />
     )
   })
+
   return (
     <ul>
       {todoDisplay}
