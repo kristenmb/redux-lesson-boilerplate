@@ -12,13 +12,15 @@ export const todos = (state = [], action) => {
     case 'SHOW_ALL':
       return state
     case 'SHOW_ACTIVE':
-      return state.filter(todo => {
+      const activeTodos = state.filter(todo => {
         return !todo.completed
       })
+      return activeTodos
     case 'SHOW_COMPLETED':
-      return state.filter(todo => {
+      const completedTodos = state.filter(todo => {
         return todo.completed
       })
+      return completedTodos
     default:
       return state;
   }
