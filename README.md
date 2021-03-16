@@ -1,12 +1,9 @@
-### Setup
+### Mod 4 PreWork
 
-This app was created using the `create-react-app` boilerplate.
+Implementation of Redux on an idea boilerplate to gain familiarity with Redux. 
 
-#### Install Dependencies
-`npm install`  
+To use:
+* Fork or Clone repo to your local machine.
+* Run `npm install` 
+* Run `npm start` 
 
-#### Start Dev Server
-`npm start`  
-
-### Run Tests
-`npm test`
